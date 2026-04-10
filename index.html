@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDV International Limited — Digital Media & Content Publishing</title>
+    <meta name="description" content="MDV International Limited is a Hong Kong-based digital media company. We publish content websites and grow their audiences.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0f2440;
+            --navy-light: #1a3a5c;
+            --navy-dark: #0a1a2e;
+            --gold: #c9a84c;
+            --gold-light: #d4b965;
+            --gold-muted: rgba(201, 168, 76, 0.15);
+            --slate: #64748b;
+            --slate-light: #94a3b8;
+            --off-white: #f8f9fb;
+            --white: #ffffff;
+            --border: rgba(15, 36, 64, 0.08);
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #333;
+            line-height: 1.8;
+            background: var(--white);
+        }
+
+        /* ── Header ── */
+        header {
+            background: var(--navy);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--slate-light);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            margin-left: 32px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* ── Layout ── */
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 72px 0;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(165deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 100px 0 88px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+        }
+
+        .hero .container {
+            position: relative;
+        }
+
+        .hero-label {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--white);
+            letter-spacing: -0.3px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--slate-light);
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .hero-divider {
+            width: 48px;
+            height: 2px;
+            background: var(--gold);
+            margin: 28px auto 24px;
+        }
+
+        /* ── Section headings ── */
+        h2 {
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--navy);
+            margin-bottom: 12px;
+            letter-spacing: -0.2px;
+        }
+
+        .section-line {
+            width: 36px;
+            height: 2px;
+            background: var(--gold);
+            margin-bottom: 40px;
+        }
+
+        /* ── Services ── */
+        .services-section {
+            background: var(--off-white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 32px;
+        }
+
+        .service {
+            background: var(--white);
+            padding: 32px 28px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: box-shadow 0.3s;
+        }
+
+        .service:hover {
+            box-shadow: 0 4px 24px rgba(15, 36, 64, 0.08);
+        }
+
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold-muted);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .service h3 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+            letter-spacing: 0.2px;
+        }
+
+        .service p {
+            font-size: 15px;
+            color: var(--slate);
+            line-height: 1.7;
+        }
+
+        /* ── Mission / Vision ── */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+        }
+
+        .mission-vision-item {
+            padding-left: 24px;
+            border-left: 2px solid var(--gold);
+        }
+
+        .mission-vision h3 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+
+        .mission-vision p {
+            font-size: 16px;
+            color: var(--navy-light);
+        }
+
+        /* ── Values ── */
+        .values-section {
+            background: var(--off-white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+        }
+
+        .value {
+            display: flex;
+            gap: 16px;
+        }
+
+        .value-marker {
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        .value h3 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .value p {
+            font-size: 15px;
+            color: var(--slate);
+            line-height: 1.7;
+        }
+
+        /* ── Contact ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .contact-label {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            color: var(--slate);
+            margin-bottom: 4px;
+        }
+
+        .contact-info a {
+            color: var(--navy);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 1px;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--gold);
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--navy-dark);
+            padding: 28px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 12px;
+            color: var(--slate);
+            letter-spacing: 0.3px;
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 72px 0 64px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .values-grid,
+            .mission-vision,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            nav a {
+                margin-left: 20px;
+                font-size: 12px;
+            }
+
+            section {
+                padding: 56px 0;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">MDV International</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#values">Values</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <span class="hero-label">MDV International Limited</span>
+            <h1>Digital Media &<br>Content Publishing</h1>
+            <div class="hero-divider"></div>
+            <p>A digital media company based in Hong Kong. We publish content websites and grow their audiences.</p>
+        </div>
+    </section>
+
+    <section id="about" class="services-section">
+        <div class="container">
+            <h2>What We Do</h2>
+            <div class="section-line"></div>
+            <div class="services-grid">
+                <div class="service">
+                    <div class="service-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <h3>Content Publishing</h3>
+                    <p>We build and run content websites across multiple markets and languages. Topics are chosen based on what readers search for and what performs.</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Audience Development</h3>
+                    <p>We grow readership by combining search engine marketing with strong editorial content.</p>
+                </div>
+                <div class="service">
+                    <div class="service-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Ad Monetization</h3>
+                    <p>Our websites earn revenue through display advertising partnerships, including Google Ad Exchange.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Purpose</h2>
+            <div class="section-line"></div>
+            <div class="mission-vision">
+                <div class="mission-vision-item">
+                    <h3>Our Mission</h3>
+                    <p>We publish content that solves real problems. If a reader is searching for an answer, we want to be the page that gives it to them.</p>
+                </div>
+                <div class="mission-vision-item">
+                    <h3>Our Vision</h3>
+                    <p>To build an independent publishing company that operates across languages and markets &mdash; known for content that is useful, not generated to fill a page.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="values" class="values-section">
+        <div class="container">
+            <h2>Our Values</h2>
+            <div class="section-line"></div>
+            <div class="values-grid">
+                <div class="value">
+                    <div class="value-marker"></div>
+                    <div>
+                        <h3>Quality First</h3>
+                        <p>All content is researched and written in-house. We do not publish auto-generated or low-effort pages.</p>
+                    </div>
+                </div>
+                <div class="value">
+                    <div class="value-marker"></div>
+                    <div>
+                        <h3>User Intent</h3>
+                        <p>Every article starts with a real question someone is trying to answer. If we cannot identify the problem, we do not publish.</p>
+                    </div>
+                </div>
+                <div class="value">
+                    <div class="value-marker"></div>
+                    <div>
+                        <h3>Transparency</h3>
+                        <p>We earn revenue through clearly labeled display ads. No misleading headlines, no clickbait, no dark patterns.</p>
+                    </div>
+                </div>
+                <div class="value">
+                    <div class="value-marker"></div>
+                    <div>
+                        <h3>Decisions Based on Data</h3>
+                        <p>We use analytics and market data to decide what to publish and where to invest. Resources go where they perform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="section-line"></div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p class="contact-label">Office</p>
+                    <p>MDV International Limited</p>
+                    <p>Wanchai, Hong Kong</p>
+                </div>
+                <div class="contact-info">
+                    <p class="contact-label">Email</p>
+                    <p><a href="mailto:blog@mdvinternational.com">blog@mdvinternational.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 MDV International Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
